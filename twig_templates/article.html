@@ -1,0 +1,10 @@
+{% autoescape false %}
+<div {{div_tags}} class="row">
+	<div class="col-lg-12">
+			{% if title is not empty %}
+				<h2>{{title}}</h2>
+			{% endif %}
+			{{content}}
+	</div>
+</div>
+{% endautoescape %}

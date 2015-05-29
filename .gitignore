@@ -1,0 +1,7 @@
+/bower_components/
+/css/bootstrap.css
+/js/bower.js
+/js/bower.min.js
+/node_modules/
+/twig_cache/*
+/vendor/
