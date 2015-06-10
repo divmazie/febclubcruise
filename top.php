@@ -3,11 +3,13 @@
 <br/>
 <nav id="menu" role="navigation">
 	<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 
-						  'depth' => 2,
-						  'container' => false,
-						  'menu_class' => 'nav nav-pills',
-						  'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-						  //Process nav menu using our custom nav walker
-						  'walker' => new wp_bootstrap_navwalker() ) ); 
+						'depth' => 2,
+						'depth'             => 2,
+						'container'         => 'div',
+						'container_class'   => 'collapse navbar-collapse',
+						'menu_class' => 'nav nav-pills',
+						'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+						//Process nav menu using our custom nav walker
+						'walker' => new wp_bootstrap_navwalker() ) ); 
 	?>
 </nav>
