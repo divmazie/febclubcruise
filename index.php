@@ -7,10 +7,8 @@
 <?php endwhile; endif; ?>
 	-->
 <div class="container">
-	<br/>
-	<img src="<?php echo get_template_directory_uri(); ?>/img/banner-crop.jpg" class="img-responsive" alt="Hover text provided courtesy Randall Munroe">
-	<br/>
 <?php
+	require 'top.php';
 	$front_posts = new WP_Query( array(
 	    'post_type' => 'front_page_item',
 	    'posts_per_page' => -1,

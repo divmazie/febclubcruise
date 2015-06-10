@@ -67,6 +67,7 @@ return $count;
 }
 }
 require_once(__DIR__.'/include/cpt.php');
+require_once(__DIR__.'/include/wp_bootstrap_navwalker.php');
 
 //require_once 'vendor/autoload.php';
 
