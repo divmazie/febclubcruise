@@ -69,6 +69,7 @@ return $count;
 require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/acf.php');
 require_once(__DIR__.'/include/wp_bootstrap_navwalker.php');
+require_once(__DIR__.'/include/theme-options-cmb.php');
 
 //require_once 'vendor/autoload.php';
 
