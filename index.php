@@ -34,6 +34,13 @@
 			$faq_posts = new WP_Query( array(
 			    'post_type' => 'faq',
 			    'posts_per_page' => -1,
+				'meta_query' => array(
+			        array(
+			            'key' => 'show_on_front_page',
+			            'value' => '"show on front page"',
+			            'compare' => 'LIKE'
+			        )
+			    )
 			));
 			$faq_posts = $faq_posts -> get_posts();
 			wp_reset_postdata();
