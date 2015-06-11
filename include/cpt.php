@@ -1,18 +1,18 @@
 <?php
 
-function cptui_register_generic_cpt( $name, $plural_name ) {
-	if (!isset($plural_name) || $plural_name == "") {
-		$plural_name = $name."s";
-	}
-	if (ctype_upper($name)) {
-		$up_name = $name;
-		$up_plural_name = $plural_name;
-	} else {
-		$up_name = ucwords($name);
-		$up_plural_name = ucwords($plural_name);
-	}
-	$down_name = preg_replace('/\s+/', '_', strtolower($name));
-	//$down_plural_name = preg_replace('/\s+/', '_', strtolower($plural_name));
+function cptui_register_generic_cpt($name, $plural_name) {
+    if(!isset($plural_name) || $plural_name == "") {
+        $plural_name = $name . "s";
+    }
+    if(ctype_upper($name)) {
+        $up_name = $name;
+        $up_plural_name = $plural_name;
+    } else {
+        $up_name = ucwords($name);
+        $up_plural_name = ucwords($plural_name);
+    }
+    $down_name = preg_replace('/\s+/', '_', strtolower($name));
+    //$down_plural_name = preg_replace('/\s+/', '_', strtolower($plural_name));
     register_post_type($down_name, array(
         'label' => $down_name,
         'description' => '',
@@ -45,30 +45,26 @@ function cptui_register_generic_cpt( $name, $plural_name ) {
             'name' => $up_plural_name,
             'singular_name' => $up_name,
             'menu_name' => $up_plural_name,
-            'add_new' => 'Add '.$up_name,
-            'add_new_item' => 'Add New '.$up_name,
+            'add_new' => 'Add ' . $up_name,
+            'add_new_item' => 'Add New ' . $up_name,
             'edit' => 'Edit',
-            'edit_item' => 'Edit '.$up_name,
-            'new_item' => 'New '.$up_name,
-            'view' => 'View '.$up_plural_name,
-            'view_item' => 'View '.$up_plural_name,
-            'search_items' => 'Search '.$up_plural_name,
-            'not_found' => 'No '.$up_plural_name.' Found',
-            'not_found_in_trash' => 'No '.$up_plural_name.' Found in Trash',
-            'parent' => 'Parent '.$up_name,
+            'edit_item' => 'Edit ' . $up_name,
+            'new_item' => 'New ' . $up_name,
+            'view' => 'View ' . $up_plural_name,
+            'view_item' => 'View ' . $up_plural_name,
+            'search_items' => 'Search ' . $up_plural_name,
+            'not_found' => 'No ' . $up_plural_name . ' Found',
+            'not_found_in_trash' => 'No ' . $up_plural_name . ' Found in Trash',
+            'parent' => 'Parent ' . $up_name,
         )
     ));
 }
 
 function cptui_register_my_cpt_faq() {
-	cptui_register_generic_cpt("FAQ","");
+    cptui_register_generic_cpt("FAQ", "");
 }
-add_action('init', 'cptui_register_my_cpt_faq');
 
-function cptui_register_my_cpt_front() {
-	cptui_register_generic_cpt("Front Page Item","");
-}
-add_action('init', 'cptui_register_my_cpt_front');
+add_action('init', 'cptui_register_my_cpt_faq');
 
 $pieces = array();
 include 'prepopulate.php';
@@ -86,5 +82,4 @@ foreach($pieces as $piece) {
     }
 
 }
-
 ?>
