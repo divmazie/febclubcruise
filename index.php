@@ -58,7 +58,6 @@
 			echo "</div>";
 		}
 	}
-	include "prereg_form.php";
 ?>
 </div>
 <?php get_template_part( 'nav', 'below' ); ?>
