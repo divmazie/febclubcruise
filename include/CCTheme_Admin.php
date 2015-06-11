@@ -57,12 +57,12 @@ class CCTheme_Admin {
      * Constructor
      * @since 0.1.0
      */
-    public function __construct($key, $metaboxid, $optionsTitle, $fields) {
+    public function __construct() {
         // Set our title
-        $this -> title = $optionsTitle;
-        $this -> key = $key;
-        $this -> metabox_id = $metaboxid;
-        $this -> field_array = $fields;
+        $this -> title = $_ENV['CCTHEMEADMIN_OPTION_PAGE_TITLE'];
+        $this -> key = $_ENV['CCTHEMEADMIN_OPTION_PAGE_KEY'];
+        $this -> metabox_id = $_ENV['CCTHEMEADMIN_OPTION_PAGE_METABOXID'];
+        $this -> field_array = $_ENV['CCTHEMEADMIN_OPTION_PAGE_FIELDS'];
 
         // run hooks
         add_action('admin_init', array(
@@ -83,13 +83,6 @@ class CCTheme_Admin {
             return plugins_url() . '/cmb2';
         });
 
-    }
-
-    /**
-     * Initiate our hooks
-     * @since 0.1.0
-     */
-    public function hooks() {
     }
 
     /**
