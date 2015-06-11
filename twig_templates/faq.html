@@ -5,10 +5,7 @@
     <h1>{{heading}}</h1>
     {% for faq in faqs %}
     {% autoescape false %}
-    <h4 class="question"><a href="#{{faq.slug}}" data-toggle="collapse">{{faq.title}}</a></h4>
-    <div class="answer collapse" id="{{faq.slug}}">
-        {{faq.content}}
-    </div>
+    {% include 'faq_item.html' %}
     {% endautoescape %}
     {% else %}
     No faq items found.

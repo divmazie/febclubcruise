@@ -53,7 +53,7 @@
 				}
 				$content = apply_filters('the_content',$faq_post->post_content);
 				$div_tags = " id=$name";
-				echo $twig->render('faq_item.html', array('title' => $title, 'content' => $content));
+				echo $twig->render('faq_item.html', array('faq'=>array('slug'=>$name,'title' => $title, 'content' => $content)));
 			}
 			echo "</div>";
 		}
