@@ -70,6 +70,13 @@ require_once(__DIR__.'/include/cpt.php');
 require_once(__DIR__.'/include/acf.php');
 require_once(__DIR__.'/include/wp_bootstrap_navwalker.php');
 require_once(__DIR__.'/include/theme-options-cmb.php');
+require_once(__DIR__.'/include/febclub_cmb_options_array.php');
+
+
+$optionss = new CCTheme_Admin('cctheme_options',//
+'cctheme_option_metabox',//
+'Feb Club Cruise Theme Options', //
+$febclub_cmb_options_array);
 
 //require_once 'vendor/autoload.php';
 
