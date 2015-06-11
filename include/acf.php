@@ -19,6 +19,17 @@ if(function_exists("register_field_group")) {
                 'default_value' => '',
                 'layout' => 'vertical',
             ),
+            array(
+                'key' => 'field_54caf8c8c0de8',
+                'label' => 'FAQ Section Header',
+                'name' => 'faq_section_header',
+                'type' => 'radio',
+                'choices' => array_combine($_ENV['FCC_FAQ_HEADERS_ORDERD'], $_ENV['FCC_FAQ_HEADERS_ORDERD']),
+                'other_choice' => 0,
+                'save_other_choice' => 0,
+                'default_value' => '',
+                'layout' => 'vertical',
+            ),
         ),
         'location' => array( array( array(
                     'param' => 'post_type',
