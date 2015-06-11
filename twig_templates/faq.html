@@ -1,0 +1,17 @@
+<h2>{{title}}</h2>
+
+<div class='indent'>
+    {% for heading,faqs in faqsByHeader %}
+    <h1>{{heading}}</h1>
+    {% for faq in faqs %}
+    {% autoescape false %}
+    <h4 class="question"><a href="#{{faq.slug}}" data-toggle="collapse">{{faq.title}}</a></h4>
+    <div class="answer collapse" id="{{faq.slug}}">
+        {{faq.content}}
+    </div>
+    {% endautoescape %}
+    {% else %}
+    No faq items found.
+    {% endfor %}
+    {% endfor %}
+</div>
