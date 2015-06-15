@@ -1,5 +1,7 @@
 <?php
-$pieces = array(//
+$pieces = array();
+/*
+$pieces = array(// ORIGINAL PREPOP ARRAY, WILL DISCARD
 	array(
 		'post_name' => 'dictionary-entry',
 		'post_title' => 'Dictionary entry [HIDE TITLE]',
@@ -189,5 +191,5 @@ Royal Caribbean does offer unlimited drinks packages, generally at $20-40 dollar
         'post_type' => 'faq',
     ),
 );
-
+*/
 ?>
