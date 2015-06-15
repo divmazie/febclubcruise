@@ -1,6 +1,6 @@
 {% autoescape false %}
-<h4 class="question">
-	<a href="#">{{title}}</a>
-</h4>
-{{content}}
+    <h4 class="question" id="{{faq.slug}}"><a href="#{{faq.slug}}_answer" data-toggle="collapse">{{faq.title}}</a></h4>
+    <div class="answer collapse" id="{{faq.slug}}_answer">
+        {{faq.content}}
+    </div>
 {% endautoescape %}

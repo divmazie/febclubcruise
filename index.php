@@ -7,10 +7,8 @@
 <?php endwhile; endif; ?>
 	-->
 <div class="container">
-	<br/>
-	<img src="<?php echo get_template_directory_uri(); ?>/img/banner-crop.jpg" class="img-responsive" alt="Hover text provided courtesy Randall Munroe">
-	<br/>
 <?php
+	require 'top.php';
 	$front_posts = new WP_Query( array(
 	    'post_type' => 'front_page_item',
 	    'posts_per_page' => -1,
@@ -36,6 +34,13 @@
 			$faq_posts = new WP_Query( array(
 			    'post_type' => 'faq',
 			    'posts_per_page' => -1,
+				'meta_query' => array(
+			        array(
+			            'key' => 'show_on_front_page',
+			            'value' => '"show on front page"',
+			            'compare' => 'LIKE'
+			        )
+			    )
 			));
 			$faq_posts = $faq_posts -> get_posts();
 			wp_reset_postdata();
@@ -48,12 +53,11 @@
 				}
 				$content = apply_filters('the_content',$faq_post->post_content);
 				$div_tags = " id=$name";
-				echo $twig->render('faq_item.html', array('title' => $title, 'content' => $content));
+				echo $twig->render('faq_item.html', array('faq'=>array('slug'=>$name,'title' => $title, 'content' => $content)));
 			}
 			echo "</div>";
 		}
 	}
-	include "prereg_form.php";
 ?>
 </div>
 <?php get_template_part( 'nav', 'below' ); ?>

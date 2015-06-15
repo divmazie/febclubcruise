@@ -16,6 +16,7 @@ function blankslate_load_scripts()
 {
 //wp_enqueue_script( 'jquery' );
 wp_enqueue_script('bower',get_template_directory_uri().'/js/bower.min.js');
+wp_enqueue_script('sitewide',get_template_directory_uri().'/js/sitewide.js');
 wp_enqueue_style('bootstrap',get_template_directory_uri().'/css/bootstrap.css');
 }
 add_action( 'comment_form_before', 'blankslate_enqueue_comment_reply_script' );
@@ -67,7 +68,21 @@ return $count;
 }
 }
 require_once(__DIR__.'/include/cpt.php');
+require_once(__DIR__.'/include/wp_bootstrap_navwalker.php');
 
+// include admin stuff
+
+
+require_once(__DIR__.'/include/CCTheme_Admin.php');
+require_once(__DIR__.'/include/CCTheme_Admin_conf.php');
+// create it
+CCTheme_Admin::getInstance();
+add_action('cmb2_init', function() {
+    $_ENV['FCC_FAQ_HEADERS_ORDERD']= array_map(function($val){return htmlentities($val,ENT_QUOTES);},array_map('trim', explode('|', cctheme_get_option('piped_cats'))));
+
+    require_once(__DIR__.'/include/acf.php');
+
+});
 //require_once 'vendor/autoload.php';
 
 require_once __DIR__.'/vendor/twig/twig/lib/Twig/Autoloader.php';
@@ -75,6 +90,6 @@ Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem(__DIR__.'/twig_templates');
 $twig = new Twig_Environment($loader, array(
-    'cache' => false//__DIR__.'/twig_cache',
+'cache' => false//__DIR__.'/twig_cache',
 ));
 ?>

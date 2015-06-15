@@ -1,3 +1,8 @@
+<div class="container foot-border">
+	<div class="col-lg-12">
+		©2015 JoCoCruise   |  Agency of record for JoCo Cruise 2016 is Worldwide Travel and Cruise Associates, Inc. a licensed seller of travel in the state of Florida. License number 10505316.
+	</div>
+</div>
 <div class="clear"></div>
 </div>
 <footer id="footer" role="contentinfo">

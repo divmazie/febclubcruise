@@ -1,0 +1,14 @@
+<h2>{{title}}</h2>
+
+<div class='indent'>
+    {% for heading,faqs in faqsByHeader %}
+    <h1>{{heading}}</h1>
+    {% for faq in faqs %}
+    {% autoescape false %}
+    {% include 'faq_item.html' %}
+    {% endautoescape %}
+    {% else %}
+    No faq items found.
+    {% endfor %}
+    {% endfor %}
+</div>
