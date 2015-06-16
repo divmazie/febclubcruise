@@ -92,4 +92,5 @@ $loader = new Twig_Loader_Filesystem(__DIR__.'/twig_templates');
 $twig = new Twig_Environment($loader, array(
 'cache' => false//__DIR__.'/twig_cache',
 ));
+require_once(__DIR__.'/gallery.php');
 ?>
