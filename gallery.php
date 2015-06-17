@@ -89,6 +89,7 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
     foreach($attachments as $id => $attachment) {
         $attr = ( trim($attachment -> post_excerpt)) ? array('aria-describedby' => "$selector-$id") : '';
 		$image_output = wp_get_attachment_image($id, $atts['size'], false, $attr);
+		$image_output = str_replace("class=\"", "class=\"img-responsive ", $image_output);
 		$image_meta = wp_get_attachment_metadata($id);
 		if ($image_meta['height']<$min_height) {
 			$min_height = $image_meta['height'];
