@@ -1,5 +1,5 @@
 {% autoescape false %}
-<div id="{{id}}" class="carousel slide" data-ride="carousel">
+<div id="{{id}}" class="carousel slide" data-ride="carousel" style="height: {{height}}px;">
   <!-- Indicators -->
   <ol class="carousel-indicators">
   	{% for i in range(0,(items|length-1)) %}
@@ -10,7 +10,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
   	{% for item in items %}
-	    <div class="item{% if item == items|first %} active{% endif %}">
+	    <div class="item{% if item == items|first %} active{% endif %}" style="height: {{height}}px;">
 	    	{% if images %}
 		      	{{item.image}}
 	      	{% else %}

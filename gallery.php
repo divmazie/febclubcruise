@@ -85,9 +85,14 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
         $icontag = 'dt';
     }
 	$twig_items = array();
+	$min_height = PHP_INT_MAX;
     foreach($attachments as $id => $attachment) {
         $attr = ( trim($attachment -> post_excerpt)) ? array('aria-describedby' => "$selector-$id") : '';
 		$image_output = wp_get_attachment_image($id, $atts['size'], false, $attr);
+		$image_meta = wp_get_attachment_metadata($id);
+		if ($image_meta['height']<$min_height) {
+			$min_height = $image_meta['height'];
+		}
 		/*
         if(!empty($atts['link']) && 'file' === $atts['link']) {
             $image_output = wp_get_attachment_link($id, $atts['size'], false, false, false, $attr);
@@ -103,7 +108,7 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
         }
 		array_push($twig_items,array('image'=>$image_output,'caption'=>$caption));
     }
-	return $twig->render('carousel.html', array('id'=>'carousel'.$atts['id'],'items'=>$twig_items,'images'=>true));
+	return $twig->render('carousel.html', array('id'=>'carousel'.$atts['id'],'items'=>$twig_items,'images'=>true, 'height'=>$min_height));
 	
 	/*
     $columns = intval($atts['columns']);
