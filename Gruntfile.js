@@ -4,6 +4,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     // must run npm install grunt-contrib-watch --save-dev
     grunt.loadNpmTasks('grunt-contrib-watch');
+    // npm install grunt-bower-task --save-dev
+    grunt.loadNpmTasks('grunt-bower-task');
 
     // Project configuration.
     grunt.initConfig({
@@ -36,6 +38,11 @@ module.exports = function(grunt) {
                 }
             }
         },
+        bower : {
+            install : {
+                //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+            }
+        },
         watch : {
             scripts : {
                 files : ['bower.json'],
@@ -63,6 +70,6 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
 
-    grunt.registerTask('buildbower', ['bower_concat', 'uglify:bower']);
+    grunt.registerTask('buildbower', ['bower:install', 'bower_concat', 'uglify:bower']);
 
 };
