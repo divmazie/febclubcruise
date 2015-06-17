@@ -87,7 +87,7 @@ add_filter('post_gallery', function($output = '', $atts, $content = false, $tag 
 	$twig_items = array();
 	$min_height = PHP_INT_MAX;
     foreach($attachments as $id => $attachment) {
-        $attr = ( trim($attachment -> post_excerpt)) ? array('aria-describedby' => "$selector-$id") : '';
+        $attr = '';
 		$image_output = wp_get_attachment_image($id, $atts['size'], false, $attr);
 		$image_meta = wp_get_attachment_metadata($id);
 		if ($image_meta['height']<$min_height) {
