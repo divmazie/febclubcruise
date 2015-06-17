@@ -15,5 +15,12 @@ $_ENV['CCTHEMEADMIN_OPTION_PAGE_FIELDS'] = array( array(
 		'id' => 'footer_text',
 		'type' => 'text_medium',
 		'default' => 'Agency of record for Feb Club Cruise 2016 is Worldwide Travel and Cruise Associates, Inc. a licensed seller of travel in the state of Florida. License number 10505316.'
+	), 
+	array(
+		'name' => 'Google Analytics ID',
+		'desc' => 'Google Analytics Profile ID (Form: \'UA-XXXXX-X\')',
+		'id' => 'ga_id',
+		'type' => 'text_small',
+		'default' => ''
 	) );
 ?>

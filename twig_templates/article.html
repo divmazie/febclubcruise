@@ -1,7 +1,7 @@
 {% autoescape false %}
 <div {{div_tags}} class="row">
 	<div class="col-lg-12">
-			{% if title is not empty %}
+			{% if (title is not empty) and ('HIDE TITLE' not in title) %}
 				<h2>{{title}}</h2>
 			{% endif %}
 			{{content}}
