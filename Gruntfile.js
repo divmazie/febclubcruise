@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
 
+    // must run npm install grunt-contrib-less --save-dev
     grunt.loadNpmTasks('grunt-contrib-less');
+    // must run npm install grunt-contrib-watch --save-dev
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Project configuration.
     grunt.initConfig({
@@ -31,6 +34,16 @@ module.exports = function(grunt) {
                 files : {
                     "css/bootstrap.css" : "custom_bootstrap/custom-bootstrap.less"
                 }
+            }
+        },
+        watch : {
+            scripts : {
+                files : ['bower.json'],
+                tasks : 'buildbower'
+            },
+            less : {
+                files : ['custom_bootstrap/**/*.less'],
+                tasks : 'less:development'
             }
         },
         bower_concat : {
