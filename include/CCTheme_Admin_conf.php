@@ -21,6 +21,6 @@ $_ENV['CCTHEMEADMIN_OPTION_PAGE_FIELDS'] = array( array(
 		'desc' => 'Google Analytics Profile ID (Form: \'UA-XXXXX-X\')',
 		'id' => 'ga_id',
 		'type' => 'text_small',
-		'default' => 'UA-XXXXX-X'
+		'default' => ''
 	) );
 ?>
