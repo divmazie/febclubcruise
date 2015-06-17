@@ -16,6 +16,9 @@
 	$front_posts = $front_posts -> get_posts();
 	wp_reset_postdata();
 	
+	$test_items = array('Example1','Thing2','boobs');
+	echo $twig->render('carousel.html', array('id'=>'carousel_test','items'=>$test_items,'images'=>false));
+	
 	foreach($front_posts as $post) {
 		//var_dump($post);
 		//echo "<br />".$post->post_content."<br />";
