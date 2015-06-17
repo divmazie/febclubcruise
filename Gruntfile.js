@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+    grunt.loadNpmTasks('grunt-contrib-less');
+
     // Project configuration.
     grunt.initConfig({
         pkg : grunt.file.readJSON('package.json'),
@@ -21,6 +23,16 @@ module.exports = function(grunt) {
                 dest : 'build/<%= pkg.name %>.min.js'
             }
         },
+        less : {
+            development : {
+                options : {
+                    paths : ['custom_bootstrap/']
+                },
+                files : {
+                    "css/bootstrap.css" : "custom_bootstrap/custom-bootstrap.less"
+                }
+            }
+        },
         bower_concat : {
             all : {
                 dest : 'js/bower.js'
@@ -40,4 +52,4 @@ module.exports = function(grunt) {
 
     grunt.registerTask('buildbower', ['bower_concat', 'uglify:bower']);
 
-}; 
+};
