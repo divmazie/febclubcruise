@@ -93,4 +93,17 @@ $twig = new Twig_Environment($loader, array(
 'cache' => false//__DIR__.'/twig_cache',
 ));
 require_once(__DIR__.'/gallery.php');
+
+add_action('wp_footer', function(){
+        echo <<<EOF
+        <script type="text/javascript">
+            // open external links in new tab
+            $('#content').find('a').filter(function() {
+                return this.hostname && this.hostname.indexOf(location.hostname)===-1
+            }).attr({
+                target : "_blank"
+            });
+        </script>
+EOF;
+});
 ?>
