@@ -1,14 +1,19 @@
 <h2>{{title}}</h2>
 
 <div class='indent'>
-    {% for heading,faqs in faqsByHeader %}
-    <h1>{{heading}}</h1>
-    {% for faq in faqs %}
-    {% autoescape false %}
-    {% include 'faq_item.html' %}
-    {% endautoescape %}
-    {% else %}
-    No faq items found.
+	<div class="btn-group btn-group-sm" role="group">
+    {% for heading,headerID in headerIDs %}
+    	<button type="button" class="btn btn-default"><a href="#{{headerID}}">{{heading}}</a></button>
     {% endfor %}
+   	</div>
+    {% for heading,faqs in faqsByHeader %}
+	    <h1 id="{{headerIDs[heading]}}">{{heading}}</h1>
+	    {% for faq in faqs %}
+		    {% autoescape false %}
+		    {% include 'faq_item.html' %}
+		    {% endautoescape %}
+	    {% else %}
+		    No faq items found.
+	    {% endfor %}
     {% endfor %}
 </div>

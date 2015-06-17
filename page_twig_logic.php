@@ -4,6 +4,7 @@ if($post -> post_name == "faq") {
 
     $allHeadersOrdered = $_ENV['FCC_FAQ_HEADERS_ORDERD'];
     $faqsByHeader = array_combine($allHeadersOrdered, array_fill(0, count($allHeadersOrdered), array()));
+	$header_ids = array();
 
     $faq_posts = new WP_Query( array(
         'post_type' => 'faq',
@@ -16,6 +17,8 @@ if($post -> post_name == "faq") {
     foreach($faq_posts as $faq_post) {
         $header = get_field('faq_section_header', $faq_post -> ID);
         $header = $header ? $header : 'No Header';
+		$header_id = preg_replace("/\W+/", "", $header);
+		$header_ids[$header] = $header_id;
 
         $name = $faq_post -> post_name;
         $title = $faq_post -> post_title;
@@ -32,7 +35,8 @@ if($post -> post_name == "faq") {
 
     echo $twig -> render('faq.html', array(
         'faqsByHeader' => $faqsByHeader,
-        'title' => get_the_title()
+        'title' => get_the_title(),
+        'headerIDs' => $header_ids,
     ));
 
 }
