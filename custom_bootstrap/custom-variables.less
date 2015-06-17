@@ -14,11 +14,26 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         #1567ab; //darken(#428bca, 6.5%); // #337ab7
-@brand-success:         #5cb85c;
-@brand-info:            #d7e1ec;
-@brand-warning:         #f0ad4e;
-@brand-danger:          #d9534f;
+
+
+@brand-primary:         #0072af;
+@brand-success:         #325686;
+@brand-info:            #0072af;
+@brand-warning:         #e97d49;
+@brand-danger:          #d61d7d;
+
+
+// using colors from here
+// http://identity.yale.edu/web
+
+// mostly unused
+// see http://identity.yale.edu/colors
+
+// 0E4C92 Yale Web Blue
+// 2d6fbd Higher intensity (brighter) than Yale Blue
+// 978d85 A secondary color for use with Yale Blue
+// ffef36 a yellow from http://www.yale.edu/printer/bulletin/style/Editorial_guide.pdf
+// d61d7d a pink from http://www.yale.edu/printer/bulletin/style/Editorial_guide.pdf
 
 
 //== Scaffolding
@@ -80,7 +95,7 @@
 //## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
 
 //** Load fonts from this directory.
-@icon-font-path:          "../fonts/";
+@icon-font-path:          "../bower_components/bootstrap/fonts/";
 //** File name for all font files.
 @icon-font-name:          "glyphicons-halflings-regular";
 //** Element ID within SVG icon file.
@@ -430,7 +445,7 @@
 @nav-tabs-link-hover-border-color:          @gray-lighter;
 
 @nav-tabs-active-link-hover-bg:             @body-bg;
-@nav-tabs-active-link-hover-color:          @gray;
+@nav-tabs-active-link-hover-color:          @gray-lighter;
 @nav-tabs-active-link-hover-border-color:   #ddd;
 
 @nav-tabs-justified-link-border-color:            #ddd;
@@ -494,20 +509,20 @@
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-@state-success-text:             #3c763d;
-@state-success-bg:               #dff0d8;
+@state-success-text:             #0072af;
+@state-success-bg:               #819f62;
 @state-success-border:           darken(spin(@state-success-bg, -10), 5%);
 
 @state-info-text:                darken(@brand-info, 50%);
 @state-info-bg:                  @brand-info;
 @state-info-border:              darken(spin(@state-info-bg, -10), 7%);
 
-@state-warning-text:             #8a6d3b;
-@state-warning-bg:               #fcf8e3;
+@state-warning-text:             #f27934;
+@state-warning-bg:               #e45d1a;
 @state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
 
-@state-danger-text:              #a94442;
-@state-danger-bg:                #f2dede;
+@state-danger-text:              #d61d7d;
+@state-danger-bg:                lighten(@state-danger-text, 20%);
 @state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
 
 
@@ -792,7 +807,7 @@
 //** Breadcrumb text color
 @breadcrumb-color:              #ccc;
 //** Text color of current page in the breadcrumb
-@breadcrumb-active-color:       @gray-light;
+@breadcrumb-active-color:       @gray-dark;
 //** Textual separator for between breadcrumb elements
 @breadcrumb-separator:          "/";
 
@@ -801,15 +816,15 @@
 //
 //##
 
-@carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6);
+@carousel-text-shadow:                        0 1px 7px rgba(0,0,0,.9);
 
-@carousel-control-color:                      #fff;
-@carousel-control-width:                      15%;
+@carousel-control-color:                      @brand-primary;
+@carousel-control-width:                      0%;
 @carousel-control-opacity:                    .5;
 @carousel-control-font-size:                  20px;
 
-@carousel-indicator-active-bg:                #fff;
-@carousel-indicator-border-color:             #fff;
+@carousel-indicator-active-bg:                @brand-primary;
+@carousel-indicator-border-color:             lighten(@brand-primary,50%);
 
 @carousel-caption-color:                      #fff;
 

@@ -6,6 +6,10 @@ if(function_exists('acf')) {
 }
 
 if(function_exists("register_field_group")) {
+
+    $faqHeaderArr = array_map(function($val) {
+        return htmlentities($val, ENT_QUOTES);
+    }, $_ENV['FCC_FAQ_HEADERS_ORDERD']);
     register_field_group(array(
         'id' => 'acf_faq',
         'title' => 'FAQ',
@@ -24,7 +28,7 @@ if(function_exists("register_field_group")) {
                 'label' => 'FAQ Section Header',
                 'name' => 'faq_section_header',
                 'type' => 'radio',
-                'choices' => array_combine($_ENV['FCC_FAQ_HEADERS_ORDERD'], $_ENV['FCC_FAQ_HEADERS_ORDERD']),
+                'choices' => array_combine($faqHeaderArr, $faqHeaderArr),
                 'other_choice' => 0,
                 'save_other_choice' => 0,
                 'default_value' => '',

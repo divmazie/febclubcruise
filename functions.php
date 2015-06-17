@@ -78,7 +78,7 @@ require_once(__DIR__.'/include/CCTheme_Admin_conf.php');
 // create it
 CCTheme_Admin::getInstance();
 add_action('cmb2_init', function() {
-    $_ENV['FCC_FAQ_HEADERS_ORDERD']= array_map(function($val){return htmlentities($val,ENT_QUOTES);},array_map('trim', explode('|', cctheme_get_option('piped_cats'))));
+    $_ENV['FCC_FAQ_HEADERS_ORDERD']= array_map('trim', explode('|', cctheme_get_option('piped_cats')));
 
     require_once(__DIR__.'/include/acf.php');
 
@@ -92,4 +92,5 @@ $loader = new Twig_Loader_Filesystem(__DIR__.'/twig_templates');
 $twig = new Twig_Environment($loader, array(
 'cache' => false//__DIR__.'/twig_cache',
 ));
+require_once(__DIR__.'/gallery.php');
 ?>

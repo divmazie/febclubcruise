@@ -6,7 +6,7 @@
 		if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 		?>
 		<h2><? the_title() ?></h2>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('page-'.$post->post_name); ?>>
 			<header class="header">
 			
 			</header>
