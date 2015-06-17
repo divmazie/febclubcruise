@@ -30,6 +30,7 @@ em {
   color: lighten(@brand-primary, 40%);
   margin-bottom: 20px;
 }
+/*
 .carousel_non_image {
   min-height: 150px;
 }
@@ -42,7 +43,6 @@ em {
   width: auto;
   max-width: 100%;
 }
-/*
 @carousel-height: 500px;
 .carousel img {
   margin: auto;
@@ -58,8 +58,15 @@ em {
   margin: 20px;
 }
 .carousel-slick img {
-  padding: 5px;
+  padding: 1px;
 }
 button.slick-prev::before, button.slick-next::before {
   color: @brand-primary;
+}
+.carousel-slick-caption {
+  margin: 10px;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+  color: darken(@brand-primary,15%);
 }
