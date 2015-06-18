@@ -1,11 +1,6 @@
 <h2>{{title}}</h2>
 
-<div class='indent'>
-	<div class="btn-group btn-group-sm" role="group">
-    {% for heading,headerID in headerIDs %}
-    	<button type="button" class="btn btn-default"><a href="#{{headerID}}">{{heading}}</a></button>
-    {% endfor %}
-   	</div>
+<div class="col-md-9 col-xs-12 col-sm-12">
     {% for heading,faqs in faqsByHeader %}
 	    <h1 id="{{headerIDs[heading]}}">{{heading}}</h1>
 	    {% for faq in faqs %}
@@ -17,3 +12,18 @@
 	    {% endfor %}
     {% endfor %}
 </div>
+<div class="col-md-3 hidden-xs hidden-sm">
+	<nav id="sidenavbar" data-spy="affix" data-offset-top="400">
+		<ul class="nav nav-pills nav-stacked">
+	    {% for heading,headerID in headerIDs %}
+	    	<li><a href="#{{headerID}}">{{heading}}</a></li>
+	    {% endfor %}
+	    </ul>
+   	</nav>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("body").scrollspy({target: "#sidenavbar"}) 
+});
+$("#sidenavbar").attr('data-offset-top',$("#sidenavbar").offset().top-20);
+</script>
