@@ -1,9 +1,5 @@
 <?php
 
-if(function_exists('acf')) {
-    $acf = acf();
-    $acf -> settings['dir'] = plugins_url() . '/advanced-custom-fields/';
-}
 
 if(function_exists("register_field_group")) {
 

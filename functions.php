@@ -77,6 +77,13 @@ require_once(__DIR__.'/include/CCTheme_Admin.php');
 require_once(__DIR__.'/include/CCTheme_Admin_conf.php');
 // create it
 CCTheme_Admin::getInstance();
+
+// need to init this here before actions
+// this sets plugins dir for acf correctly
+if(function_exists('acf')) {
+    $acf = acf();
+    $acf -> settings['dir'] = plugins_url() . '/advanced-custom-fields/';
+}
 add_action('cmb2_init', function() {
     $_ENV['FCC_FAQ_HEADERS_ORDERD']= array_map('trim', explode('|', cctheme_get_option('piped_cats')));
 
