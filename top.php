@@ -6,7 +6,7 @@
 						'depth' => 2,
 						'depth'             => 2,
 						'container'         => 'div',
-						'container_class'   => 'collapse navbar-collapse',
+						'container_class'   => '',
 						'menu_class' => 'nav nav-pills',
 						'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
 						//Process nav menu using our custom nav walker
