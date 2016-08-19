@@ -1,5 +1,5 @@
 <br/>
-<img src="<?php echo get_template_directory_uri(); ?>/img/banner-crop.jpg" class="img-responsive" alt="Hover text provided courtesy Randall Munroe">
+<img src="<?php echo get_template_directory_uri(); ?>/img/banner2017.jpg" class="img-responsive" alt="Hover text provided courtesy Randall Munroe">
 <br/>
 <nav id="menu" role="navigation">
 	<?php wp_nav_menu( array( 'theme_location' => 'main-menu', 
